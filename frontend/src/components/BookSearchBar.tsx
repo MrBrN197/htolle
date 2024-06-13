@@ -22,6 +22,7 @@ const StyledInput = styled(InputBase)(({ theme }) => ({
   padding: 4,
   width: '20rem',
   backgroundColor: theme.palette.common.white,
+  border: `1px solid rgba(9.3,0.9,0.2,0.2)`,
   // width: '100%',
   '& input': {
     borderRadius: 4,
