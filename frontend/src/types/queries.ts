@@ -11,8 +11,8 @@ declare module '@mui/material/styles' {
   interface Theme {
   }
   interface ThemeOptions {
-    blue?: {
-      main?: string;
+    blues?: {
+      steel?: string;
     };
   }
 }

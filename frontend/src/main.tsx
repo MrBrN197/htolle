@@ -11,8 +11,16 @@ const GRAPHQL_SERVER_URL = 'http://localhost:4000/graphql' // TODO: read from Gl
 
 const client = new ApolloClient({
   uri: GRAPHQL_SERVER_URL,
+  connectToDevTools: true,
   cache: new InMemoryCache(),
 });
+
+if (import.meta.hot) {
+  import.meta.hot.on(
+    "vite:beforeUpdate",
+    () => console.clear()
+  );
+}
 
 import { GraphQlContext } from '@/data/graphQl.ts'
 import DrawerProvider from '@/hooks/drawer.ts';

@@ -59,7 +59,11 @@ export default function BookView({ book }: Props) {
             alignItems='center'
             justifyContent='space-between'
           >
-            <Chip sx={{ p: 1 }} color="secondary" label={"Level " + readingLevel} size="small" />
+            <Stack  direction='row' spacing={1} alignItems='baseline'>
+              <Chip  sx={{ textalign: 'center', width:30, height: 30, flexGrow: 0, fontWeight: 'bold', color: "blues.steel" }} color="secondary" label={readingLevel} size="small" />
+            </Stack>
+
+
             {!findBook(book.id) ?
               <IconButton sx={{ p: 0 }} disabled={open} onClick={handleAddBook} >
                 <Icon fontSize='medium' color='primary'>add_circle</Icon>

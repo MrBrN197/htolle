@@ -17,17 +17,20 @@ const BOOK_QUERY = gql`
 export function useBooks(page: number, limit?: number) {
   if (page < 1) throw new Error(`invalid 'page' number '${page}'`);
 
-  const client = useContext(GraphQlContext)!; // TODO:
+  const client = useContext(GraphQlContext)!;
 
   const { loading, data, error } = useQuery<{ books: Array<Book> }>(
-    BOOK_QUERY,
+    BOOK_QUERY, // TODO: Backend create filter variable
     { client },
   );
+
+  function setFilter(title: string | null) {
+    console.error("TODO: backend create filter query", title);
+  }
 
   let books = data?.books || [];
 
   const total = books.length; // TODO:  BE implement graphql cursors
-
   const max = (limit == undefined) ? total : limit;
   const start = (page - 1) * max;
   const end = start + (start + max);
@@ -42,6 +45,7 @@ export function useBooks(page: number, limit?: number) {
   return {
     books,
     error,
+    setFilter,
     loading,
     total,
   };
