@@ -64,15 +64,17 @@ export default function({ children }: PropsWithChildren) {
         open: isOpen,
         getNotifications,
         notify: queuePushNotification,
-        setOpen: (isOpen: boolean) =>  setOpen(isOpen) ,
+        setOpen: (isOpen: boolean) => setOpen(isOpen),
       },
     },
-    children
+    children,
+    createElement(SnackBar, {}, null),
   );
 }
 
-export function SnackBar() {
-  const { open, getNotifications, setOpen } = useContext(SnackBarContext);
+function SnackBar() {
+  const ctx = useContext(SnackBarContext);
+  const { open, getNotifications, setOpen } = ctx;
 
   return getNotifications().map(notification =>
     createElement(

@@ -5,14 +5,11 @@ import Stack from '@mui/material/Stack'
 import BookSearchBar from '@/components/BookSearchBar'
 import BookList from '@/components/BookList'
 import AppBar from '@/components/AppBar';
-import { SnackBar } from "@/hooks/snackBar";
 
 function App() {
 
   return (
     <>
-      <SnackBar />
-
       <Box >
         <AppBar />
         <Container sx={{ pt: 10 }}>
@@ -21,9 +18,7 @@ function App() {
             justifyContent="center"
             alignItems="center"
           >
-            <Stack direction='column'>
-              <BookSearchBar />
-            </Stack>
+            <BookSearchBar />
           </Stack>
           <BookList />
         </Container>

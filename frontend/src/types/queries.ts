@@ -6,13 +6,3 @@ export interface Book {
   readingLevel: string,
 }
 
-
-declare module '@mui/material/styles' {
-  interface Theme {
-  }
-  interface ThemeOptions {
-    blues?: {
-      steel?: string;
-    };
-  }
-}
