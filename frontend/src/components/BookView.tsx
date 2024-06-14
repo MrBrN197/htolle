@@ -15,6 +15,22 @@ interface Props {
 }
 
 
+function readingLevelColor(level: string) {
+  switch (level) {
+    case 'A': return "readingLevel.A"
+    case 'B': return "readingLevel.B"
+    case 'C': return "readingLevel.C"
+    case 'D': return "readingLevel.D"
+    case 'E': return "readingLevel.E"
+    case 'F': return "readingLevel.F"
+    case 'G': return "readingLevel.G"
+    case 'H': return "readingLevel.H"
+    case 'I': return "readingLevel.I"
+    case 'J': return "readingLevel.J"
+  }
+
+}
+
 export default function BookView({ book }: Props) {
   const { title, author, coverPhotoURL, readingLevel } = book;
 
@@ -59,8 +75,21 @@ export default function BookView({ book }: Props) {
             alignItems='center'
             justifyContent='space-between'
           >
-            <Stack  direction='row' spacing={1} alignItems='baseline'>
-              <Chip  sx={{ textalign: 'center', width:30, height: 30, flexGrow: 0, fontWeight: 'bold', color: "blues.steel" }} color="secondary" label={readingLevel} size="small" />
+            <Stack direction='row' spacing={1} alignItems='baseline'>
+              <Chip 
+                variant="outlined" 
+                sx={{
+                  textalign: 'center',
+                  width: 30,
+                  borderColor: readingLevelColor(book.readingLevel),
+                  height: 30,
+                  flexGrow: 0,
+                  fontWeight: '900',
+                  borderWidth: 4,
+                  color: readingLevelColor(book.readingLevel),
+                }} 
+                label={readingLevel} size="small" 
+              />
             </Stack>
 
 

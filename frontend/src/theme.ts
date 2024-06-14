@@ -33,6 +33,18 @@ declare module '@mui/material/styles' {
       dark?: string,  // Yellow Dark
       red?: string,       // Orange Red
     },
+    readingLevel?: {
+      A: string,
+      B: string,
+      C: string,
+      D: string,
+      E: string,
+      F: string,
+      G: string,
+      H: string,
+      I: string,
+      J: string,
+    },
   }
 
   interface PaletteOptions {
@@ -47,6 +59,18 @@ declare module '@mui/material/styles' {
       main?: string,
       dark?: string,  // Yellow Dark
       red?: string,       // Orange Red
+    },
+    readingLevel?: {
+      A: string,
+      B: string,
+      C: string,
+      D: string,
+      E: string,
+      F: string,
+      G: string,
+      H: string,
+      I: string,
+      J: string,
     },
   }
 }
@@ -67,7 +91,7 @@ const theme = createTheme({
       light: yellow[400],
       main: '#fabd33',
       dark: '#faad00',  // Yellow Dark
-      900: '#f76434',       // Orange Red
+      900: '#f76434',   // Orange Red
     },
     blues: {
       light: '#cffafa',
@@ -82,7 +106,20 @@ const theme = createTheme({
     yellow: {
       main: "#fabd33",
       dark: '#faad00',  // Yellow Dark
-      red: '#f76434',       // Orange Red
+      red: '#f76434',   // Orange Red
+    },
+
+    readingLevel: {
+      A: '#f76434', // Orange Red
+      B: '#f76434',
+      C: '#f76434',
+      D: '#f76434',
+      E: "#4aa088", // Teal
+      F: "#4aa088",
+      G: "gray",  //
+      H: "gray",
+      I: "gray",
+      J: "gray",
     },
   },
 });

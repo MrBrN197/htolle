@@ -19,7 +19,7 @@ interface Props {
 }
 
 function ReadingListBookView({ title, author, onRemove }: Props) {
-  return <Box>
+  return <Box >
     <Stack sx={{ py: 1 }} justifyContent='space-between' alignItems='center' direction='row'>
       <div >
         <Typography sx={{ px: 2 }} textAlign='left' >{title}</Typography >
