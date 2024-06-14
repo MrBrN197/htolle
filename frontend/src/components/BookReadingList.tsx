@@ -51,7 +51,7 @@ export default function BasicGrid() {
   const { toggle } = useDrawer();
 
   return (
-    <Box sx={{ bgcolor: "primary.900", flexGrow: 1 }}>
+    <Box sx={{ width: '30vw', bgcolor: "primary.900", flexGrow: 1 }}>
       <Button sx={{ m: 2, mx: 4 }} variant="outlined" color='secondary' onClick={() => toggle()}>Close Reading List</Button>
 
       {(books.length == 0) ?
